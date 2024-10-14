@@ -9,14 +9,14 @@
 import Foundation
 import WebKit
 
-public protocol JavascriptEvaluating {
-    func evaluateJavaScript(
-        _ javaScriptString: String,
-        completionHandler: (@MainActor @Sendable (Any?, (any Error)?) -> Void)?
-    )
-}
-
-extension WKWebView: JavascriptEvaluating {}
+//public protocol JavascriptEvaluating {
+//    func evaluateJavaScript(
+//        _ javaScriptString: String,
+//        completionHandler: (@MainActor @Sendable (Any?, (any Error)?) -> Void)?
+//    )
+//}
+//
+//extension WKWebView: JavascriptEvaluating {}
 
 private extension Encodable {
     var data: Data {
@@ -48,10 +48,10 @@ public protocol TopicRepresentable {
 }
 
 public final class WebViewConnection {
-    let webView: JavascriptEvaluating
+    let webView: WKWebView
     private var generators: [String: (Any) -> Void] = [:]
 
-    public init(webView: JavascriptEvaluating) {
+    public init(webView: WKWebView) {
         self.webView = webView
     }
 }

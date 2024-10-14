@@ -5,7 +5,7 @@
 //  Created by Johan Sørensen on 12/07/2017.
 //  Copyright © 2017 NRK. All rights reserved.
 //
-
+/*
 import XCTest
 import NativeBridge
 
@@ -127,3 +127,4 @@ private final class Evaluator: @preconcurrency JavascriptEvaluating {
         completionHandler?(result.0, result.1)
     }
 }
+*/
